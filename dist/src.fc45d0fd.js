@@ -30090,7 +30090,7 @@ module.hot.accept(reloadCSS);
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/Components/Home/Home.tsx":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/Components/Menu/Menu.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30098,9 +30098,219 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _react = _interopRequireWildcard(require("react"));
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Menu = function (_a) {
+  var maribor = _a.maribor;
+  /* return (
+      <div>
+        <h1>{maribor.ime}</h1>
+        <ul>
+          {maribor.igralci.map(igralec => (
+            <li key={igralec.id}>{igralec.ime} {igralec.priimek}</li>
+          ))}
+        </ul>
+      </div>
+    ); */
+  return (0, _jsxRuntime.jsx)("h1", {
+    children: maribor.ime
+  });
+};
+var _default = Menu;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/Components/BackendBaje/Ekipa.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var Ekipa = /** @class */function () {
+  function Ekipa(ime, letoUstanovitve, direktor, trener, igralci) {
+    this.ime = ime;
+    this.letoUstanovitve = letoUstanovitve;
+    this.direktor = direktor;
+    this.trener = trener;
+    this.igralci = igralci;
+  }
+  Ekipa.prototype.dodajIgralca = function (igralec) {
+    this.igralci.push(igralec);
+  };
+  Ekipa.prototype.posodobiIgralca = function (id, igralec) {
+    for (var i = 0; i < this.igralci.length; i++) {
+      if (this.igralci[i].id === id) {
+        this.igralci[i] = igralec;
+        return;
+        break; //uporabim for ker podpira break
+      }
+    }
+
+    console.log("igralca z tem ID-jem NI v arrayu!");
+  };
+  Ekipa.prototype.odstraniIgralca = function (id) {
+    this.igralci = this.igralci.filter(function (igralec) {
+      return igralec.id !== id;
+    });
+  };
+  Ekipa.prototype.izpisiPodatke = function () {
+    var igralciStr = this.igralci.map(function (igralec) {
+      return "".concat(igralec.ime, " ").concat(igralec.priimek, " (").concat(igralec.visina, " cm, ").concat(igralec.teza, " kg)");
+    }) //gre skozi vse igralce. pa jih da v stringica
+    .join(', '); //združi vse igralce z vejico
+    return "".concat(this.ime, " (ustanovljena leta ").concat(this.letoUstanovitve, ")\nTrener: ").concat(this.trener.ime, " ").concat(this.trener.priimek, "\nDirektor: ").concat(this.direktor.ime, " ").concat(this.direktor.priimek, "\nIgralci: ").concat(igralciStr);
+  };
+  return Ekipa;
+}();
+var _default = Ekipa;
+exports.default = _default;
+},{}],"src/Components/BackendBaje/Index.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Maribor = void 0;
+var _Ekipa = _interopRequireDefault(require("./Ekipa"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Bojan = {
+  ime: "Buraz",
+  priimek: "Buraski",
+  letoRojstva: 1999,
+  vloga: 'Direktor',
+  veljavnost: 2024,
+  id: 1
+};
+var Darko = {
+  ime: "Jovo",
+  priimek: "MajkoMilo",
+  letoRojstva: 2004,
+  vloga: 'Trener',
+  veljavnost: 2028,
+  id: 2
+};
+var Ronaldo = {
+  ime: "Kristjano",
+  priimek: "Ronaldich",
+  letoRojstva: 1985,
+  visina: 194,
+  teza: 79,
+  poskodovan: false,
+  id: 3
+};
+var Messi = {
+  ime: "Lijonel",
+  priimek: "Messich",
+  letoRojstva: 1989,
+  visina: 177,
+  teza: 104,
+  poskodovan: true,
+  id: 4
+};
+var Neymar = {
+  ime: "Nejmar",
+  priimek: "Neymarich",
+  letoRojstva: 1989,
+  visina: 190,
+  teza: 53,
+  poskodovan: false,
+  id: 5
+};
+var Pique = {
+  ime: "Pike",
+  priimek: "Shejkira",
+  letoRojstva: 1989,
+  visina: 160,
+  teza: 63,
+  poskodovan: false,
+  id: 6
+};
+var Maribor = new _Ekipa.default("Nk Maribor", 1960, Darko, Bojan, []);
+exports.Maribor = Maribor;
+Maribor.dodajIgralca(Ronaldo);
+Maribor.dodajIgralca(Messi);
+Maribor.dodajIgralca(Neymar);
+/* console.log( Maribor); //dodam igralce v Maribor
+
+
+Maribor.posodobiIgralca(4, Pique); //po posodobitvi igralca
+console.log( Maribor)
+
+Maribor.odstraniIgralca(6) //po odstranitvi igralca
+console.log( Maribor)
+
+//console.log(Maribor.izpisiPodatke);
+const podatki = Maribor.izpisiPodatke();
+console.log(podatki); */
+},{"./Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"src/Components/Telo/Telo.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Telo = function (_a) {
+  var maribor = _a.maribor;
+  console.log(maribor.direktor);
+  console.log(maribor.trener);
+  return (0, _jsxRuntime.jsx)("div", {
+    children: (0, _jsxRuntime.jsx)("ul", {
+      children: maribor.igralci.map(function (igralec) {
+        return (0, _jsxRuntime.jsxs)("li", {
+          children: [igralec.ime, " ", igralec.priimek]
+        }, igralec.id);
+      })
+    })
+  });
+};
+var _default = Telo;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/Components/Igralec/Igralec.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Igralec = function (_a) {
+  var igralec = _a.igralec;
+  return (0, _jsxRuntime.jsx)("div", {
+    children: (0, _jsxRuntime.jsx)("table", {
+      children: (0, _jsxRuntime.jsxs)("tr", {
+        children: [(0, _jsxRuntime.jsx)("td", {
+          children: igralec.id
+        }), (0, _jsxRuntime.jsx)("td", {
+          children: igralec.ime
+        }), (0, _jsxRuntime.jsx)("td", {
+          children: igralec.priimek
+        }), (0, _jsxRuntime.jsx)("td", {
+          children: igralec.letoRojstva
+        }), (0, _jsxRuntime.jsx)("td", {
+          children: igralec.visina
+        }), (0, _jsxRuntime.jsx)("td", {
+          children: igralec.teza
+        })]
+      })
+    })
+  });
+};
+var _default = Igralec;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/Components/Opozorilo/Opozorilo.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var __assign = void 0 && (void 0).__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -30111,54 +30321,184 @@ var __assign = void 0 && (void 0).__assign || function () {
   };
   return __assign.apply(this, arguments);
 };
-var Home = function () {
-  var _a = (0, _react.useState)(0),
-    count = _a[0],
-    setCount = _a[1];
-  (0, _react.useEffect)(function () {
-    document.title = "You clicked ".concat(count, " times");
-  }, [count]);
-  var handleClick = function () {
-    setCount(count + 1);
+var Opozorilo = function () {
+  return (0, _jsxRuntime.jsx)("h3", __assign({
+    color: 'red'
+  }, {
+    children: "Ekipa ima manj kot 11 igralcev"
+  }));
+};
+var _default = Opozorilo;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/Components/Info/Info.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
   };
-  var buttons = [{
-    label: 'Button 1',
-    color: 'red',
-    onClick: handleClick
+  return __assign.apply(this, arguments);
+};
+var Info = function () {
+  return (0, _jsxRuntime.jsx)("h3", __assign({
+    color: 'red'
   }, {
-    label: 'Button 2',
-    color: 'blue',
-    onClick: handleClick
-  }, {
-    label: 'Button 3',
-    color: 'green',
-    onClick: handleClick
-  }];
-  return (0, _jsxRuntime.jsxs)("div", {
-    children: [(0, _jsxRuntime.jsx)("h1", {
-      children: "Welcome to my React app!"
-    }), (0, _jsxRuntime.jsx)("p", {
-      children: "This is the home page."
-    }), (0, _jsxRuntime.jsxs)("p", {
-      children: ["You clicked the button ", count, " times."]
-    }), (0, _jsxRuntime.jsx)("div", {
-      children: buttons.map(function (button, index) {
-        return (0, _jsxRuntime.jsx)("button", __assign({
-          style: {
-            backgroundColor: button.color,
-            color: 'white'
-          },
-          onClick: button.onClick
+    children: "Ekipa ima 11 igralcev ali morda celo ve\u010D "
+  }));
+};
+var _default = Info;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/Components/Noga/footer.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/Components/Noga/Noga.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+require("./footer.css");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+var Noga = function () {
+  return (0, _jsxRuntime.jsx)("div", {
+    children: (0, _jsxRuntime.jsx)("footer", __assign({
+      className: " mt-auto py-3 text-center text-lg-start bg-light text-muted"
+    }, {
+      children: (0, _jsxRuntime.jsx)("section", __assign({
+        className: "d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      }, {
+        children: (0, _jsxRuntime.jsx)("div", __assign({
+          className: "me-5 d-none d-lg-block"
         }, {
-          children: button.label
-        }), index);
-      })
-    })]
+          children: "Moje ime je Primo\u017E in sem ponosen avtor tega react projekta"
+        }))
+      }))
+    }))
+  });
+};
+var _default = Noga;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","./footer.css":"src/Components/Noga/footer.css"}],"src/Components/Home/Home.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireDefault(require("react"));
+var _Menu = _interopRequireDefault(require("../Menu/Menu"));
+var _Ekipa = _interopRequireDefault(require("../BackendBaje/Ekipa"));
+var _Index = require("../BackendBaje/Index");
+var _Telo = _interopRequireDefault(require("../Telo/Telo"));
+var _Igralec = _interopRequireDefault(require("../Igralec/Igralec"));
+var _Opozorilo = _interopRequireDefault(require("../Opozorilo/Opozorilo"));
+var _Info = _interopRequireDefault(require("../Info/Info"));
+var _Noga = _interopRequireDefault(require("../Noga/Noga"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Home = function () {
+  var Bojan = {
+    ime: "Buraz",
+    priimek: "Buraski",
+    letoRojstva: 1999,
+    vloga: 'Direktor',
+    veljavnost: 2024,
+    id: 1
+  };
+  var Darko = {
+    ime: "Jovo",
+    priimek: "MajkoMilo",
+    letoRojstva: 2004,
+    vloga: 'Trener',
+    veljavnost: 2028,
+    id: 2
+  };
+  var Ronaldo = {
+    ime: "Kristjano",
+    priimek: "Ronaldich",
+    letoRojstva: 1985,
+    visina: 194,
+    teza: 79,
+    poskodovan: false,
+    id: 3
+  };
+  var Messi = {
+    ime: "Lijonel",
+    priimek: "Messich",
+    letoRojstva: 1989,
+    visina: 177,
+    teza: 104,
+    poskodovan: true,
+    id: 4
+  };
+  var Neymar = {
+    ime: "Nejmar",
+    priimek: "Neymarich",
+    letoRojstva: 1989,
+    visina: 190,
+    teza: 53,
+    poskodovan: false,
+    id: 5
+  };
+  var Pique = {
+    ime: "Pike",
+    priimek: "Shejkira",
+    letoRojstva: 1989,
+    visina: 160,
+    teza: 63,
+    poskodovan: false,
+    id: 6
+  };
+  var Olimpija = new _Ekipa.default("Nk Olimpija", 1960, Darko, Bojan, []);
+  Olimpija.dodajIgralca(Ronaldo);
+  Olimpija.dodajIgralca(Messi);
+  Olimpija.dodajIgralca(Neymar);
+  return (0, _jsxRuntime.jsxs)("div", {
+    children: [(0, _jsxRuntime.jsx)(_Menu.default, {
+      maribor: Olimpija
+    }), (0, _jsxRuntime.jsx)(_Telo.default, {
+      maribor: _Index.Maribor
+    }), Olimpija.igralci.map(function (igralec) {
+      return (0, _jsxRuntime.jsx)(_Igralec.default, {
+        igralec: igralec
+      }, igralec.id);
+    }), Olimpija.igralci.length < 11 ? (0, _jsxRuntime.jsx)(_Opozorilo.default, {}) : (0, _jsxRuntime.jsx)(_Info.default, {}), (0, _jsxRuntime.jsx)(_Noga.default, {})]
   });
 };
 var _default = Home;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js"}],"src/App.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../Menu/Menu":"src/Components/Menu/Menu.tsx","../BackendBaje/Ekipa":"src/Components/BackendBaje/Ekipa.ts","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../Telo/Telo":"src/Components/Telo/Telo.tsx","../Igralec/Igralec":"src/Components/Igralec/Igralec.tsx","../Opozorilo/Opozorilo":"src/Components/Opozorilo/Opozorilo.tsx","../Info/Info":"src/Components/Info/Info.tsx","../Noga/Noga":"src/Components/Noga/Noga.tsx"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
+
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/App.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30169,6 +30509,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 require("./App.css");
 var _Home = _interopRequireDefault(require("./Components/Home/Home"));
+require("bootstrap/dist/css/bootstrap.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var __assign = void 0 && (void 0).__assign || function () {
   __assign = Object.assign || function (t) {
@@ -30189,7 +30530,7 @@ function App() {
 }
 var _default = App;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","./App.css":"src/App.css","./Components/Home/Home":"src/Components/Home/Home.tsx"}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","./App.css":"src/App.css","./Components/Home/Home":"src/Components/Home/Home.tsx","bootstrap/dist/css/bootstrap.css":"node_modules/bootstrap/dist/css/bootstrap.css"}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
 var getBundleURL = require('./bundle-url').getBundleURL;
 function loadBundlesLazy(bundles) {
   if (!Array.isArray(bundles)) {
@@ -30323,7 +30664,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57215" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64660" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
