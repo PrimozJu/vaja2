@@ -6,20 +6,11 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({ maribor }) => {
-
-    /* return (
-        <div>
-          <h1>{maribor.ime}</h1>
-          <ul>
-            {maribor.igralci.map(igralec => (
-              <li key={igralec.id}>{igralec.ime} {igralec.priimek}</li>
-            ))}
-          </ul>
-        </div>
-      ); */
-    return(
-        <h1>{maribor.ime}</h1>
-    )
+  return (
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '10vh', marginBottom: '1vh' }}>
+          <h1 className="text-center display-1">{maribor.ime}</h1>
+      </div>
+  );
 };
 
 export default Menu;

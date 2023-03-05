@@ -30100,21 +30100,31 @@ exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
 var Menu = function (_a) {
   var maribor = _a.maribor;
-  /* return (
-      <div>
-        <h1>{maribor.ime}</h1>
-        <ul>
-          {maribor.igralci.map(igralec => (
-            <li key={igralec.id}>{igralec.ime} {igralec.priimek}</li>
-          ))}
-        </ul>
-      </div>
-    ); */
-  return (0, _jsxRuntime.jsx)("h1", {
-    children: maribor.ime
-  });
+  return (0, _jsxRuntime.jsx)("div", __assign({
+    className: "d-flex justify-content-center align-items-center",
+    style: {
+      height: '10vh',
+      marginBottom: '1vh'
+    }
+  }, {
+    children: (0, _jsxRuntime.jsx)("h1", __assign({
+      className: "text-center display-1"
+    }, {
+      children: maribor.ime
+    }))
+  }));
 };
 var _default = Menu;
 exports.default = _default;
@@ -30664,7 +30674,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64660" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64896" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
