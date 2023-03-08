@@ -30300,10 +30300,10 @@ var Igralec = function (_a) {
           children: igralec.priimek
         }), (0, _jsxRuntime.jsx)("td", {
           children: igralec.letoRojstva
-        }), (0, _jsxRuntime.jsx)("td", {
-          children: igralec.visina
-        }), (0, _jsxRuntime.jsx)("td", {
-          children: igralec.teza
+        }), (0, _jsxRuntime.jsxs)("td", {
+          children: [igralec.visina, "cm "]
+        }), (0, _jsxRuntime.jsxs)("td", {
+          children: [igralec.teza, "kg"]
         })]
       })
     })
@@ -30448,33 +30448,6 @@ var Home = function () {
     veljavnost: 2028,
     id: 2
   };
-  var Ronaldo = {
-    ime: "Kristjano",
-    priimek: "Ronaldich",
-    letoRojstva: 1985,
-    visina: 194,
-    teza: 79,
-    poskodovan: false,
-    id: 3
-  };
-  var Messi = {
-    ime: "Lijonel",
-    priimek: "Messich",
-    letoRojstva: 1989,
-    visina: 177,
-    teza: 104,
-    poskodovan: true,
-    id: 4
-  };
-  var Neymar = {
-    ime: "Nejmar",
-    priimek: "Neymarich",
-    letoRojstva: 1989,
-    visina: 190,
-    teza: 53,
-    poskodovan: false,
-    id: 5
-  };
   var Pique = {
     ime: "Pike",
     priimek: "Shejkira",
@@ -30484,20 +30457,127 @@ var Home = function () {
     poskodovan: false,
     id: 6
   };
+  var Messi = {
+    ime: "Lionel",
+    priimek: "Messi",
+    letoRojstva: 1987,
+    visina: 170,
+    teza: 72,
+    poskodovan: false,
+    id: 7
+  };
+  var Ronaldo = {
+    ime: "Cristiano",
+    priimek: "Ronaldo",
+    letoRojstva: 1985,
+    visina: 187,
+    teza: 83,
+    poskodovan: false,
+    id: 8
+  };
+  var Neymar = {
+    ime: "Neymar",
+    priimek: "da Silva",
+    letoRojstva: 1992,
+    visina: 175,
+    teza: 68,
+    poskodovan: true,
+    id: 9
+  };
+  var Salah = {
+    ime: "Mohamed",
+    priimek: "Salah",
+    letoRojstva: 1992,
+    visina: 175,
+    teza: 71,
+    poskodovan: false,
+    id: 10
+  };
+  var Mbappe = {
+    ime: "Kylian",
+    priimek: "Mbappe",
+    letoRojstva: 1998,
+    visina: 178,
+    teza: 73,
+    poskodovan: false,
+    id: 11
+  };
+  var DeBruyne = {
+    ime: "Kevin",
+    priimek: "De Bruyne",
+    letoRojstva: 1991,
+    visina: 181,
+    teza: 68,
+    poskodovan: true,
+    id: 12
+  };
+  var VanDijk = {
+    ime: "Virgil",
+    priimek: "Van Dijk",
+    letoRojstva: 1991,
+    visina: 193,
+    teza: 92,
+    poskodovan: true,
+    id: 13
+  };
+  var Modric = {
+    ime: "Luka",
+    priimek: "Modric",
+    letoRojstva: 1985,
+    visina: 172,
+    teza: 66,
+    poskodovan: false,
+    id: 14
+  };
+  var Kane = {
+    ime: "Harry",
+    priimek: "Kane",
+    letoRojstva: 1993,
+    visina: 188,
+    teza: 86,
+    poskodovan: true,
+    id: 15
+  };
+  var Kante = {
+    ime: "N'Golo",
+    priimek: "Kante",
+    letoRojstva: 1991,
+    visina: 168,
+    teza: 70,
+    poskodovan: false,
+    id: 16
+  };
+  var Saso = {
+    ime: "Saso",
+    priimek: "Bitkojn",
+    letoRojstva: 2009,
+    visina: 115,
+    teza: 93,
+    poskodovan: true,
+    id: 17
+  };
   var Olimpija = new _Ekipa.default("Nk Olimpija", 1960, Darko, Bojan, []);
   Olimpija.dodajIgralca(Ronaldo);
   Olimpija.dodajIgralca(Messi);
   Olimpija.dodajIgralca(Neymar);
+  Olimpija.dodajIgralca(Kane);
+  Olimpija.dodajIgralca(Kante);
+  Olimpija.dodajIgralca(VanDijk);
+  Olimpija.dodajIgralca(DeBruyne);
+  Olimpija.dodajIgralca(Mbappe);
+  Olimpija.dodajIgralca(Salah);
+  Olimpija.dodajIgralca(Pique);
+  Olimpija.dodajIgralca(Saso);
   return (0, _jsxRuntime.jsxs)("div", {
     children: [(0, _jsxRuntime.jsx)(_Menu.default, {
-      maribor: Olimpija
+      maribor: _Index.Maribor
     }), (0, _jsxRuntime.jsx)(_Telo.default, {
       maribor: _Index.Maribor
     }), Olimpija.igralci.map(function (igralec) {
       return (0, _jsxRuntime.jsx)(_Igralec.default, {
         igralec: igralec
       }, igralec.id);
-    }), Olimpija.igralci.length < 11 ? (0, _jsxRuntime.jsx)(_Opozorilo.default, {}) : (0, _jsxRuntime.jsx)(_Info.default, {}), (0, _jsxRuntime.jsx)(_Noga.default, {})]
+    }), Olimpija.igralci.length < 11 ? (0, _jsxRuntime.jsx)(_Opozorilo.default, {}) : (0, _jsxRuntime.jsx)(_Info.default, {}), "(", Olimpija.igralci.length, ")", (0, _jsxRuntime.jsx)(_Noga.default, {})]
   });
 };
 var _default = Home;
@@ -30674,7 +30754,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64896" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63183" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

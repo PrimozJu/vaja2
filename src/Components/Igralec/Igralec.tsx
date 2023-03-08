@@ -17,8 +17,8 @@ const Igralec: React.FC<Props> = ({ igralec }) => {
                             <td>{igralec.ime}</td>
                             <td>{igralec.priimek}</td>
                             <td>{igralec.letoRojstva}</td>
-                            <td>{igralec.visina}</td>
-                            <td>{igralec.teza}</td>
+                            <td>{igralec.visina}cm </td>
+                            <td>{igralec.teza}kg</td>
                         </tr>
                     </table>
                 </div>
