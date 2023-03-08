@@ -5,11 +5,14 @@ import Routing  from './Components/Routing/Routing';
 import Home  from './Components/Home/Home';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <BrowserRouter>
+      <Routing/>
+      </BrowserRouter>
     </div>
   );
 }

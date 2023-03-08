@@ -66,18 +66,123 @@ const Maribor: Ekipa = new Ekipa(
 Maribor.dodajIgralca(Ronaldo);
 Maribor.dodajIgralca(Messi);
 Maribor.dodajIgralca(Neymar);
-/* console.log( Maribor); //dodam igralce v Maribor
 
+const BojanDirektor: Funkcionar = {
+    ime: "Buki",
+    priimek: "Buraski",
+    letoRojstva: 1998,
+    vloga: 'Direktor',
+    veljavnost: 2024,
+    id: 1
+};
 
-Maribor.posodobiIgralca(4, Pique); //po posodobitvi igralca
-console.log( Maribor)
+const MarkoTreener: Funkcionar = {
+    ime: "Jovo",
+    priimek: "MajkoMilo2",
+    letoRojstva: 2003,
+    vloga: 'Trener',
+    veljavnost: 2028,
+    id: 2
+}
 
-Maribor.odstraniIgralca(6) //po odstranitvi igralca
-console.log( Maribor)
+  const Salah: Igralec = {
+  ime: "Mohamed",
+  priimek: "Salah",
+  letoRojstva: 1992,
+  visina: 175,
+  teza: 71,
+  poskodovan: false,
+  id: 10
+  }
 
-//console.log(Maribor.izpisiPodatke);
-const podatki = Maribor.izpisiPodatke();
-console.log(podatki); */
+  const Mbappe: Igralec = {
+  ime: "Kylian",
+  priimek: "Mbappe",
+  letoRojstva: 1998,
+  visina: 178,
+  teza: 73,
+  poskodovan: false,
+  id: 11
+  }
 
+  const DeBruyne: Igralec = {
+  ime: "Kevin",
+  priimek: "De Bruyne",
+  letoRojstva: 1991,
+  visina: 181,
+  teza: 68,
+  poskodovan: true,
+  id: 12
+  }
 
-export {Maribor}
+  const VanDijk: Igralec = {
+  ime: "Virgil",
+  priimek: "Van Dijk",
+  letoRojstva: 1991,
+  visina: 193,
+  teza: 92,
+  poskodovan: true,
+  id: 13
+  }
+
+  const Modric: Igralec = {
+  ime: "Luka",
+  priimek: "Modric",
+  letoRojstva: 1985,
+  visina: 172,
+  teza: 66,
+  poskodovan: false,
+  id: 14
+  }
+
+  const Kane: Igralec = {
+  ime: "Harry",
+  priimek: "Kane",
+  letoRojstva: 1993,
+  visina: 188,
+  teza: 86,
+  poskodovan: true,
+  id: 15
+  }
+
+  const Kante: Igralec = {
+  ime: "N'Golo",
+  priimek: "Kante",
+  letoRojstva: 1991,
+  visina: 168,
+  teza: 70,
+  poskodovan: false,
+  id: 16
+  }
+  const Saso: Igralec = {
+  ime: "Saso",
+  priimek: "Bitkojn",
+  letoRojstva: 2009,
+  visina: 115,
+  teza: 93,
+  poskodovan: true,
+  id: 17
+  }
+
+const Olimpija: Ekipa = new Ekipa(
+  "Nk Olimpija",
+  1960,
+  MarkoTreener,
+  BojanDirektor,
+  []
+);  
+Olimpija.dodajIgralca(Ronaldo);
+Olimpija.dodajIgralca(Messi);
+Olimpija.dodajIgralca(Neymar);
+Olimpija.dodajIgralca(Kane);
+Olimpija.dodajIgralca(Kante);
+Olimpija.dodajIgralca(VanDijk);
+Olimpija.dodajIgralca(DeBruyne);
+Olimpija.dodajIgralca(Mbappe);
+Olimpija.dodajIgralca(Salah);
+Olimpija.dodajIgralca(Pique);
+Olimpija.dodajIgralca(Saso);
+
+const teams = [Maribor, Olimpija];
+
+export {teams}
