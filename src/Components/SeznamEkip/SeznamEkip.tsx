@@ -1,25 +1,29 @@
-  import React, { useState } from 'react';
-  //import Ekipa from '../BackendBaje/Ekipa';
-  import { teams } from '../BackendBaje/Index';
-  import { Link } from 'react-router-dom';
-  interface Props {
-    //  kera_ekipa: Ekipa;
-  }
+import React, { useState } from 'react';
+import { teams } from '../BackendBaje/Index';
+import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
-  const SeznamEkip = () => {
-      const [ekipe, setEkipe] = useState(teams);
-      return (
-          <div>
-              <ul>
-                  {ekipe.map((ekipa) => (
-                      <li key={ekipa.ime}>
-            <Link to={`/${ekipa.ime}`}>{ekipa.ime}</Link>
-                        </li>
-                  ))}
-              </ul>
-          </div>
-      );
-    
-  };
+const SeznamEkip = () => {
+  const [ekipe, setEkipe] = useState(teams);
 
-  export default SeznamEkip;
+  return (
+    <div>
+      <CardGroup>
+        {ekipe.map((ekipa) => (
+          <Card key={ekipa.ime}>
+            <Card.Body>
+              <Card.Title>{ekipa.ime}</Card.Title>
+              <Card.Text>since {ekipa.letoUstanovitve}</Card.Text>
+              <Link to={`/${ekipa.ime}`} className="btn btn-primary">
+                Več
+              </Link>
+            </Card.Body>
+          </Card>
+        ))}
+      </CardGroup>
+    </div>
+  );
+};
+
+export default SeznamEkip;

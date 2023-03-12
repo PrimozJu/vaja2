@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom';
 interface Props {}
 
 const Home: React.FC<Props> = () => {
-  const { ime } = useParams();
+  const { ime } = useParams(); //iz urlja vzame ime ekipe
 
   const izbrana_ekipa = teams.find((ekipa) => ekipa.ime === ime);
 

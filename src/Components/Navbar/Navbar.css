@@ -1,0 +1,20 @@
+.navbar-brand {
+    font-size: 2rem;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+  }
+  
+  .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav > .nav-item > .nav-link {
+    color: #fff;
+  }
+  .navbar-nav > .nav-item > .nav-link:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  
