@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // assuming you are using React Router
+import SeznamEkip from '../SeznamEkip/SeznamEkip';
 import './NavBar.css'; // import custom CSS file for styling
 
 function NavBar() {
   return (
+<div>
+
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">OOORSR vaje</Link>
@@ -23,6 +26,8 @@ function NavBar() {
         </div>
       </div>
     </nav>
+    <SeznamEkip/>
+    </div>
   );
 }
 

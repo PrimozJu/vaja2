@@ -7,32 +7,34 @@ import { Igralec, Funkcionar } from '../BackendBaje/Oseba';
 import { Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 interface Props {}
+import { teams } from '../BackendBaje/Index';
+
 
 const NovaEkipa: React.FC<Props> = () => {
-  /* class Ekipa {
-    ime: string;
-    letoUstanovitve: number;
-    direktor: Funkcionar;
-    trener: Funkcionar;
-    igralci: Igralec[]; */
+  
     const [ime, setIme] = useState<string>("");
-    const [letoUstanovitve, setLetoUstanovitve] = useState<string>("");
-    const [direktor, setDirektor] = useState<Funkcionar>();
-    const [trener, setTrener] = useState<Funkcionar>();
-   
+    const [letoUstanovitve, setLetoUstanovitve] = useState<number>();
+
 
     const handleFormSubmit = (event: { preventDefault: () => void; }) => {
+        event.preventDefault();
+
+
+        const novaEkipa = {ime: ime , letoUstanovitve: letoUstanovitve, direktor: null ,trener :  null, igralci: []};
+        //teams.push(novaEkipa);
+       
+       // setEkipa([...Ekipa, novaEkipa]);//doda not in se vse updejta
         
     };
 
   return (
     <div className="row border border-warning rounded ">
         <div className="col">
-            <h2>Dodaj igralca</h2>
+            <h2>Ustvari ekipo</h2>
             <Form onSubmit={handleFormSubmit}>
                 <div className="row mb-3">
                     <div className="col-md-2">
-                        <Form.Label>Ime</Form.Label>
+                        <Form.Label>Ime ekipe</Form.Label>
                     </div>
                     <div className="col-md-10">
                         <Form.Control type="text" placeholder="Vnesi ime" value={ime} onChange={(event) => setIme(event.target.value)} />
@@ -41,10 +43,10 @@ const NovaEkipa: React.FC<Props> = () => {
 
                 <div className="row mb-3">
                     <div className="col-md-2">
-                        <Form.Label>Priimek</Form.Label>
+                        <Form.Label>Leto ustanovitve ekipe</Form.Label>
                     </div>
                     <div className="col-md-10">
-                        <Form.Control type="text" placeholder="Vnesi leto ustanovitve" value={letoUstanovitve} onChange={(event) => setLetoUstanovitve(event.target.value)} />
+                        <Form.Control type="text" placeholder="Vnesi leto ustanovitve" value={letoUstanovitve} onChange={(event) => setLetoUstanovitve(Number(event.target.value))} />
                     </div>
                 </div>
 
@@ -53,7 +55,7 @@ const NovaEkipa: React.FC<Props> = () => {
                 
 
                 <Button variant="primary" type="submit">
-                    Dodaj igralca
+                    Ustvari ekipo
                 </Button>
                 <button className="btn btn-primary">Prikaži igralce</button>
             </Form>

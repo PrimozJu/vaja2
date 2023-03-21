@@ -33709,7 +33709,7 @@ function getTargetMatch(matches, location) {
   let pathMatches = getPathContributingMatches(matches);
   return pathMatches[pathMatches.length - 1];
 } //#endregion
-},{}],"node_modules/react-router/dist/index.js":[function(require,module,exports) {
+},{}],"node_modules/react-router-dom/node_modules/react-router/dist/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36413,7 +36413,7 @@ function warning(cond, message) {
     } catch (e) {}
   }
 } //#endregion
-},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router/dist/index.js","@remix-run/router":"node_modules/@remix-run/router/dist/router.js"}],"src/Components/Menu/Menu.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router":"node_modules/react-router-dom/node_modules/react-router/dist/index.js","@remix-run/router":"node_modules/@remix-run/router/dist/router.js"}],"src/Components/Menu/Menu.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36661,7 +36661,8 @@ Olimpija.dodajIgralca(Mbappe);
 Olimpija.dodajIgralca(Salah);
 Olimpija.dodajIgralca(Pique);
 Olimpija.dodajIgralca(Saso);
-var teams = [Maribor, Olimpija];
+var Celje = new _Ekipa.default("Nk celje", 1955, null, null, []);
+var teams = [Maribor, Olimpija, Celje];
 exports.teams = teams;
 },{"./Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"node_modules/classnames/index.js":[function(require,module,exports) {
 var define;
@@ -53085,25 +53086,25 @@ var __assign = void 0 && (void 0).__assign || function () {
   return __assign.apply(this, arguments);
 };
 var NovaEkipa = function () {
-  /* class Ekipa {
-    ime: string;
-    letoUstanovitve: number;
-    direktor: Funkcionar;
-    trener: Funkcionar;
-    igralci: Igralec[]; */
   var _a = (0, _react.useState)(""),
     ime = _a[0],
     setIme = _a[1];
-  var _b = (0, _react.useState)(""),
+  var _b = (0, _react.useState)(),
     letoUstanovitve = _b[0],
     setLetoUstanovitve = _b[1];
-  var _c = (0, _react.useState)(),
-    direktor = _c[0],
-    setDirektor = _c[1];
-  var _d = (0, _react.useState)(),
-    trener = _d[0],
-    setTrener = _d[1];
-  var handleFormSubmit = function (event) {};
+  var handleFormSubmit = function (event) {
+    event.preventDefault();
+    var novaEkipa = {
+      ime: ime,
+      letoUstanovitve: letoUstanovitve,
+      direktor: null,
+      trener: null,
+      igralci: []
+    };
+    //teams.push(novaEkipa);
+    // setEkipa([...Ekipa, novaEkipa]);//doda not in se vse updejta
+  };
+
   return (0, _jsxRuntime.jsx)("div", __assign({
     className: "row border border-warning rounded "
   }, {
@@ -53111,7 +53112,7 @@ var NovaEkipa = function () {
       className: "col"
     }, {
       children: [(0, _jsxRuntime.jsx)("h2", {
-        children: "Dodaj igralca"
+        children: "Ustvari ekipo"
       }), (0, _jsxRuntime.jsxs)(_reactBootstrap.Form, __assign({
         onSubmit: handleFormSubmit
       }, {
@@ -53122,7 +53123,7 @@ var NovaEkipa = function () {
             className: "col-md-2"
           }, {
             children: (0, _jsxRuntime.jsx)(_reactBootstrap.Form.Label, {
-              children: "Ime"
+              children: "Ime ekipe"
             })
           })), (0, _jsxRuntime.jsx)("div", __assign({
             className: "col-md-10"
@@ -53143,7 +53144,7 @@ var NovaEkipa = function () {
             className: "col-md-2"
           }, {
             children: (0, _jsxRuntime.jsx)(_reactBootstrap.Form.Label, {
-              children: "Priimek"
+              children: "Leto ustanovitve ekipe"
             })
           })), (0, _jsxRuntime.jsx)("div", __assign({
             className: "col-md-10"
@@ -53153,7 +53154,7 @@ var NovaEkipa = function () {
               placeholder: "Vnesi leto ustanovitve",
               value: letoUstanovitve,
               onChange: function (event) {
-                return setLetoUstanovitve(event.target.value);
+                return setLetoUstanovitve(Number(event.target.value));
               }
             })
           }))]
@@ -53161,7 +53162,7 @@ var NovaEkipa = function () {
           variant: "primary",
           type: "submit"
         }, {
-          children: "Dodaj igralca"
+          children: "Ustvari ekipo"
         })), (0, _jsxRuntime.jsx)("button", __assign({
           className: "btn btn-primary"
         }, {
@@ -53179,7 +53180,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Routing;
+exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
@@ -53187,7 +53188,7 @@ var _Home = _interopRequireDefault(require("../Home/Home"));
 var _SeznamEkip = _interopRequireDefault(require("../SeznamEkip/SeznamEkip"));
 var _NovaEkipa = _interopRequireDefault(require("../NovaEkipa/NovaEkipa"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function Routing() {
+var Routing = function () {
   return (0, _jsxRuntime.jsxs)(_reactRouterDom.Routes, {
     children: [(0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
       path: "/",
@@ -53200,7 +53201,22 @@ function Routing() {
       element: (0, _jsxRuntime.jsx)(_NovaEkipa.default, {})
     })]
   });
-}
+};
+/* const Routing = createBrowserRouter([
+
+    {
+        path: "/",
+        element: <SeznamEkip />,
+        children: [
+            { path: "/:ime", element: <Home /> },
+            { path: "/novaEkipa", element: <NovaEkipa /> }
+        ]
+
+    },
+
+]); */
+var _default = Routing;
+exports.default = _default;
 },{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Home/Home":"src/Components/Home/Home.tsx","../SeznamEkip/SeznamEkip":"src/Components/SeznamEkip/SeznamEkip.tsx","../NovaEkipa/NovaEkipa":"src/Components/NovaEkipa/NovaEkipa.tsx"}],"src/Components/Navbar/NavBar.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -53215,6 +53231,7 @@ exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
+var _SeznamEkip = _interopRequireDefault(require("../SeznamEkip/SeznamEkip"));
 require("./NavBar.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var __assign = void 0 && (void 0).__assign || function () {
@@ -53229,64 +53246,66 @@ var __assign = void 0 && (void 0).__assign || function () {
 };
 // import custom CSS file for styling
 function NavBar() {
-  return (0, _jsxRuntime.jsx)("nav", __assign({
-    className: "navbar navbar-expand-lg navbar-dark bg-black"
-  }, {
-    children: (0, _jsxRuntime.jsxs)("div", __assign({
-      className: "container-fluid"
+  return (0, _jsxRuntime.jsxs)("div", {
+    children: [(0, _jsxRuntime.jsx)("nav", __assign({
+      className: "navbar navbar-expand-lg navbar-dark bg-black"
     }, {
-      children: [(0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
-        className: "navbar-brand",
-        to: "/"
+      children: (0, _jsxRuntime.jsxs)("div", __assign({
+        className: "container-fluid"
       }, {
-        children: "OOORSR vaje"
-      })), (0, _jsxRuntime.jsx)("button", __assign({
-        className: "navbar-toggler",
-        type: "button",
-        "data-bs-toggle": "collapse",
-        "data-bs-target": "#navbarNav",
-        "aria-controls": "navbarNav",
-        "aria-expanded": "false",
-        "aria-label": "Toggle navigation"
-      }, {
-        children: (0, _jsxRuntime.jsx)("span", {
-          className: "navbar-toggler-icon"
-        })
-      })), (0, _jsxRuntime.jsx)("div", __assign({
-        className: "collapse navbar-collapse",
-        id: "navbarNav"
-      }, {
-        children: (0, _jsxRuntime.jsxs)("ul", __assign({
-          className: "navbar-nav"
+        children: [(0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+          className: "navbar-brand",
+          to: "/"
         }, {
-          children: [(0, _jsxRuntime.jsx)("li", __assign({
-            className: "nav-item"
+          children: "OOORSR vaje"
+        })), (0, _jsxRuntime.jsx)("button", __assign({
+          className: "navbar-toggler",
+          type: "button",
+          "data-bs-toggle": "collapse",
+          "data-bs-target": "#navbarNav",
+          "aria-controls": "navbarNav",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }, {
+          children: (0, _jsxRuntime.jsx)("span", {
+            className: "navbar-toggler-icon"
+          })
+        })), (0, _jsxRuntime.jsx)("div", __assign({
+          className: "collapse navbar-collapse",
+          id: "navbarNav"
+        }, {
+          children: (0, _jsxRuntime.jsxs)("ul", __assign({
+            className: "navbar-nav"
           }, {
-            children: (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
-              className: "nav-link",
-              "aria-current": "page",
-              to: "/"
+            children: [(0, _jsxRuntime.jsx)("li", __assign({
+              className: "nav-item"
             }, {
-              children: "Domov"
-            }))
-          })), (0, _jsxRuntime.jsx)("li", __assign({
-            className: "nav-item"
-          }, {
-            children: (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
-              className: "nav-link",
-              to: "/novaEkipa"
+              children: (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+                className: "nav-link",
+                "aria-current": "page",
+                to: "/"
+              }, {
+                children: "Domov"
+              }))
+            })), (0, _jsxRuntime.jsx)("li", __assign({
+              className: "nav-item"
             }, {
-              children: "Nova Ekipa"
-            }))
-          }))]
-        }))
-      }))]
-    }))
-  }));
+              children: (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+                className: "nav-link",
+                to: "/novaEkipa"
+              }, {
+                children: "Nova Ekipa"
+              }))
+            }))]
+          }))
+        }))]
+      }))
+    })), (0, _jsxRuntime.jsx)(_SeznamEkip.default, {})]
+  });
 }
 var _default = NavBar;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./NavBar.css":"src/Components/Navbar/NavBar.css"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../SeznamEkip/SeznamEkip":"src/Components/SeznamEkip/SeznamEkip.tsx","./NavBar.css":"src/Components/Navbar/NavBar.css"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -53325,6 +53344,9 @@ function App() {
       children: [(0, _jsxRuntime.jsx)(_Navbar.default, {}), (0, _jsxRuntime.jsx)(_Routing.default, {})]
     })
   }));
+}
+{/* <RouterProvider router={Routing} />
+ */
 }
 var _default = App;
 exports.default = _default;
@@ -53462,7 +53484,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61669" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53910" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

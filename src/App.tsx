@@ -6,16 +6,21 @@ import Home  from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter } from 'react-router-dom';
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 function App() {
+  
   return (
     <div className="App">
-      <BrowserRouter>
+       <BrowserRouter> 
       <Navbar/>
       <Routing/>
-      </BrowserRouter>
-    </div>
-  );
+       </BrowserRouter>
+   </div>
+ );
 }
 
-export default App;
+{/* <RouterProvider router={Routing} />
+ */}
+ 
+ 
+ export default App;

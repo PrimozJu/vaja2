@@ -183,6 +183,14 @@ Olimpija.dodajIgralca(Salah);
 Olimpija.dodajIgralca(Pique);
 Olimpija.dodajIgralca(Saso);
 
-const teams = [Maribor, Olimpija];
+const Celje: Ekipa = new Ekipa(
+"Nk celje",
+1955,
+null as any,
+null as any,
+[]
+)
+
+const teams = [Maribor, Olimpija, Celje];
 
 export {teams}

@@ -7,6 +7,8 @@ class Ekipa {
     trener: Funkcionar;
     igralci: Igralec[];
 
+    
+
     constructor(
         ime: string,
         letoUstanovitve: number,
