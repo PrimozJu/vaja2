@@ -10,14 +10,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { teams } from './Components/BackendBaje/Index';
 function App() {
   
-  const [ekipe, setEkipe] = useState(teams);
+  const [ekipe, setEkipe] = useState(teams); //na top nivoju je defined
 
 
   return (
     <div className="App">
        <BrowserRouter> 
       <Navbar ekipe={ekipe} setEkipe={setEkipe}/>
-      <Routing/>
+      <Routing ekipe={ekipe} setEkipe={setEkipe}/>
        </BrowserRouter>
    </div>
  );

@@ -3,34 +3,23 @@ import { Route, Routes, createBrowserRouter,   RouterProvider} from "react-route
 import Home from "../Home/Home"
 import SeznamEkip from "../SeznamEkip/SeznamEkip";
 import NovaEkipa from "../NovaEkipa/NovaEkipa";
+import Ekipa from "../BackendBaje/Ekipa";
+interface Props {
+    ekipe: Ekipa[];
+    setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>;
+}
 
-
-const Routing = () => {
+const Routing = (props: Props) => {
     return (
         <Routes>
             { }
-            <Route path="/" element={<SeznamEkip />} />
+            <Route path="/" element={<SeznamEkip ekipe={props.ekipe} setEkipe={props.setEkipe}/>} />
             <Route path="/:ime" element={<Home />} />
-            <Route path="/novaEkipa" element={<NovaEkipa />} />
-
+            <Route path="/novaEkipa" element={<NovaEkipa ekipe={props.ekipe} setEkipe={props.setEkipe} />} />
         </Routes>
     )
 }
 
-
-/* const Routing = createBrowserRouter([
-
-    {
-        path: "/", 
-        element: <SeznamEkip />, 
-        children: [
-            { path: "/:ime", element: <Home /> }, 
-            { path: "/novaEkipa", element: <NovaEkipa /> }
-        ]
-
-    },
-
-]); */
 
 
 export default Routing;

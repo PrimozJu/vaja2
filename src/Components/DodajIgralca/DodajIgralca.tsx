@@ -32,6 +32,7 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
         sprazni_polja();
 
         setIgralci([...igralci, new_igralec]);//doda not in se vse updejta
+        kera_ekipa.igralci.push(new_igralec);
 
 
     };

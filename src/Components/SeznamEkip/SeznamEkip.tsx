@@ -4,9 +4,21 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import NovaEkipa from '../NovaEkipa/NovaEkipa';
+import Ekipa from '../BackendBaje/Ekipa';
 
-const SeznamEkip = () => {
+
+interface Props {
+  ekipe: Ekipa[];
+  setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>;
+
+}
+
+const SeznamEkip = (props: Props) => {
   const [ekipe, setEkipe] = useState(teams);
+
+  /* const dodajEkipo = (ekipa: Ekipa) => {
+    setEkipe([...ekipe, ekipa]);
+  }; */
   
   return (
     <div>
@@ -23,7 +35,8 @@ const SeznamEkip = () => {
           </Card>
         ))}
       </CardGroup>
-          <NovaEkipa ekipe={ekipe} setEkipe={setEkipe}/>
+         {/*  <NovaEkipa ekipe={ekipe} setEkipe={setEkipe}/> */}
+          <Link to="/novaEkipa" className="btn btn-primary">Dodaj novo ekipo</Link>
     </div>
   );
 };

@@ -52594,8 +52594,8 @@ var DodajIgralca = function (_a) {
     console.log(new_igralec);
     sprazni_polja();
     setIgralci(__spreadArray(__spreadArray([], igralci, true), [new_igralec], false)); //doda not in se vse updejta
+    kera_ekipa.igralci.push(new_igralec);
   };
-
   var sprazni_polja = function () {
     setIme("");
     setPriimek("");
@@ -53029,7 +53029,68 @@ var Home = function () {
 };
 var _default = Home;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../Menu/Menu":"src/Components/Menu/Menu.tsx","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../Telo/Telo":"src/Components/Telo/Telo.tsx","../Igralec/Igralec":"src/Components/Igralec/Igralec.tsx","../Opozorilo/Opozorilo":"src/Components/Opozorilo/Opozorilo.tsx","../Info/Info":"src/Components/Info/Info.tsx","../Noga/Noga":"src/Components/Noga/Noga.tsx","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/Components/NovaEkipa/NovaEkipa.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../Menu/Menu":"src/Components/Menu/Menu.tsx","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../Telo/Telo":"src/Components/Telo/Telo.tsx","../Igralec/Igralec":"src/Components/Igralec/Igralec.tsx","../Opozorilo/Opozorilo":"src/Components/Opozorilo/Opozorilo.tsx","../Info/Info":"src/Components/Info/Info.tsx","../Noga/Noga":"src/Components/Noga/Noga.tsx","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/Components/SeznamEkip/SeznamEkip.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireWildcard(require("react"));
+var _Index = require("../BackendBaje/Index");
+var _reactRouterDom = require("react-router-dom");
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+var SeznamEkip = function (props) {
+  var _a = (0, _react.useState)(_Index.teams),
+    ekipe = _a[0],
+    setEkipe = _a[1];
+  /* const dodajEkipo = (ekipa: Ekipa) => {
+    setEkipe([...ekipe, ekipa]);
+  }; */
+  return (0, _jsxRuntime.jsxs)("div", {
+    children: [(0, _jsxRuntime.jsx)(_CardGroup.default, {
+      children: ekipe.map(function (ekipa) {
+        return (0, _jsxRuntime.jsx)(_Card.default, {
+          children: (0, _jsxRuntime.jsxs)(_Card.default.Body, {
+            children: [(0, _jsxRuntime.jsx)(_Card.default.Title, {
+              children: ekipa.ime
+            }), (0, _jsxRuntime.jsxs)(_Card.default.Text, {
+              children: ["since ", ekipa.letoUstanovitve]
+            }), (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+              to: "/".concat(ekipa.ime),
+              className: "btn btn-primary"
+            }, {
+              children: "Ve\u010D"
+            }))]
+          })
+        }, ekipa.ime);
+      })
+    }), (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+      to: "/novaEkipa",
+      className: "btn btn-primary"
+    }, {
+      children: "Dodaj novo ekipo"
+    }))]
+  });
+};
+var _default = SeznamEkip;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","react-router-dom":"node_modules/react-router-dom/dist/index.js","react-bootstrap/Card":"node_modules/react-bootstrap/esm/Card.js","react-bootstrap/CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js"}],"src/Components/NovaEkipa/NovaEkipa.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53149,64 +53210,7 @@ var NovaEkipa = function (props) {
 };
 var _default = NovaEkipa;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../BackendBaje/Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"src/Components/SeznamEkip/SeznamEkip.tsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = _interopRequireWildcard(require("react"));
-var _Index = require("../BackendBaje/Index");
-var _reactRouterDom = require("react-router-dom");
-var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
-var _NovaEkipa = _interopRequireDefault(require("../NovaEkipa/NovaEkipa"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var __assign = void 0 && (void 0).__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-  };
-  return __assign.apply(this, arguments);
-};
-var SeznamEkip = function () {
-  var _a = (0, _react.useState)(_Index.teams),
-    ekipe = _a[0],
-    setEkipe = _a[1];
-  return (0, _jsxRuntime.jsxs)("div", {
-    children: [(0, _jsxRuntime.jsx)(_CardGroup.default, {
-      children: ekipe.map(function (ekipa) {
-        return (0, _jsxRuntime.jsx)(_Card.default, {
-          children: (0, _jsxRuntime.jsxs)(_Card.default.Body, {
-            children: [(0, _jsxRuntime.jsx)(_Card.default.Title, {
-              children: ekipa.ime
-            }), (0, _jsxRuntime.jsxs)(_Card.default.Text, {
-              children: ["since ", ekipa.letoUstanovitve]
-            }), (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
-              to: "/".concat(ekipa.ime),
-              className: "btn btn-primary"
-            }, {
-              children: "Ve\u010D"
-            }))]
-          })
-        }, ekipa.ime);
-      })
-    }), (0, _jsxRuntime.jsx)(_NovaEkipa.default, {
-      ekipe: ekipe,
-      setEkipe: setEkipe
-    })]
-  });
-};
-var _default = SeznamEkip;
-exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","react-router-dom":"node_modules/react-router-dom/dist/index.js","react-bootstrap/Card":"node_modules/react-bootstrap/esm/Card.js","react-bootstrap/CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","../NovaEkipa/NovaEkipa":"src/Components/NovaEkipa/NovaEkipa.tsx"}],"src/Components/Routing/Routing.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../BackendBaje/Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"src/Components/Routing/Routing.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53220,33 +53224,26 @@ var _Home = _interopRequireDefault(require("../Home/Home"));
 var _SeznamEkip = _interopRequireDefault(require("../SeznamEkip/SeznamEkip"));
 var _NovaEkipa = _interopRequireDefault(require("../NovaEkipa/NovaEkipa"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var Routing = function () {
+var Routing = function (props) {
   return (0, _jsxRuntime.jsxs)(_reactRouterDom.Routes, {
     children: [(0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
       path: "/",
-      element: (0, _jsxRuntime.jsx)(_SeznamEkip.default, {})
+      element: (0, _jsxRuntime.jsx)(_SeznamEkip.default, {
+        ekipe: props.ekipe,
+        setEkipe: props.setEkipe
+      })
     }), (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
       path: "/:ime",
       element: (0, _jsxRuntime.jsx)(_Home.default, {})
     }), (0, _jsxRuntime.jsx)(_reactRouterDom.Route, {
       path: "/novaEkipa",
-      element: (0, _jsxRuntime.jsx)(_NovaEkipa.default, {})
+      element: (0, _jsxRuntime.jsx)(_NovaEkipa.default, {
+        ekipe: props.ekipe,
+        setEkipe: props.setEkipe
+      })
     })]
   });
 };
-/* const Routing = createBrowserRouter([
-
-    {
-        path: "/",
-        element: <SeznamEkip />,
-        children: [
-            { path: "/:ime", element: <Home /> },
-            { path: "/novaEkipa", element: <NovaEkipa /> }
-        ]
-
-    },
-
-]); */
 var _default = Routing;
 exports.default = _default;
 },{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../Home/Home":"src/Components/Home/Home.tsx","../SeznamEkip/SeznamEkip":"src/Components/SeznamEkip/SeznamEkip.tsx","../NovaEkipa/NovaEkipa":"src/Components/NovaEkipa/NovaEkipa.tsx"}],"src/Components/Navbar/NavBar.css":[function(require,module,exports) {
@@ -53375,7 +53372,7 @@ var __assign = void 0 && (void 0).__assign || function () {
 function App() {
   var _a = (0, _react.useState)(_Index.teams),
     ekipe = _a[0],
-    setEkipe = _a[1];
+    setEkipe = _a[1]; //na top nivoju je defined
   return (0, _jsxRuntime.jsx)("div", __assign({
     className: "App"
   }, {
@@ -53383,7 +53380,10 @@ function App() {
       children: [(0, _jsxRuntime.jsx)(_Navbar.default, {
         ekipe: ekipe,
         setEkipe: setEkipe
-      }), (0, _jsxRuntime.jsx)(_Routing.default, {})]
+      }), (0, _jsxRuntime.jsx)(_Routing.default, {
+        ekipe: ekipe,
+        setEkipe: setEkipe
+      })]
     })
   }));
 }
