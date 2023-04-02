@@ -3,10 +3,11 @@ import { teams } from '../BackendBaje/Index';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
+import NovaEkipa from '../NovaEkipa/NovaEkipa';
 
 const SeznamEkip = () => {
   const [ekipe, setEkipe] = useState(teams);
-
+  
   return (
     <div>
       <CardGroup>
@@ -22,6 +23,7 @@ const SeznamEkip = () => {
           </Card>
         ))}
       </CardGroup>
+          <NovaEkipa ekipe={ekipe} setEkipe={setEkipe}/>
     </div>
   );
 };

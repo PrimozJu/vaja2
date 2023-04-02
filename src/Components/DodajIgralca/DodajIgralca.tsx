@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Form, Button } from "react-bootstrap";
 import Ekipa from '../BackendBaje/Ekipa';
 import { teams } from "../BackendBaje/Index";
@@ -51,10 +51,16 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
         console.log(igralci);
     }
 
-    const Simuliraj = () => {
+   
                 
-                setIgralci([...igralci, { ime: "Baje", priimek: "Bajec", letoRojstva: 1999, visina: 190, teza: 90, poskodovan: false, id: 18+1 }]);
-    }
+        const Simuliraj = () => {
+            setIgralci([...igralci, { ime: "Baje", priimek: "Bajec", letoRojstva: 1999, visina: 190, teza: 90, poskodovan: false, id: 18+1 }]);
+            console.log(igralci);
+            
+          }
+          
+                
+    
 
     return (
         <div className="row border border-warning rounded ">

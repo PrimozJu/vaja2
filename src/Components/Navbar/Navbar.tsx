@@ -1,9 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // assuming you are using React Router
+import Ekipa from '../BackendBaje/Ekipa';
+import { teams } from '../BackendBaje/Index';
 import SeznamEkip from '../SeznamEkip/SeznamEkip';
 import './NavBar.css'; // import custom CSS file for styling
 
-function NavBar() {
+
+/* interface props{ 
+    teams: Ekipa;
+    ekipe: Ekipa[] ;
+    setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>; 
+} */
+type NavBarProps = {    // ali pa tole za props
+  ekipe: Ekipa[],
+  setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>,
+}
+
+function NavBar({ ekipe, setEkipe }: NavBarProps) {
+  
   return (
 <div>
 
@@ -26,7 +40,7 @@ function NavBar() {
         </div>
       </div>
     </nav>
-    <SeznamEkip/>
+    
     </div>
   );
 }

@@ -7,24 +7,35 @@ import { Igralec, Funkcionar } from '../BackendBaje/Oseba';
 import { Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
 interface Props {}
-import { teams } from '../BackendBaje/Index';
+import { Ronaldo, teams } from '../BackendBaje/Index';
+import Ekipa from '../BackendBaje/Ekipa';
+import {Darko, Bojan} from '../BackendBaje/Index';
+interface Props {
+   ekipe: Ekipa[];
+   setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>;
 
+}
 
-const NovaEkipa: React.FC<Props> = () => {
+const NovaEkipa = (props: Props) => {
   
+    console.log(props.ekipe); 
+
     const [ime, setIme] = useState<string>("");
-    const [letoUstanovitve, setLetoUstanovitve] = useState<number>();
+    const [letoUstanovitve, setLetoUstanovitve] = useState<number>(0);
 
 
     const handleFormSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
 
 
-        const novaEkipa = {ime: ime , letoUstanovitve: letoUstanovitve, direktor: null ,trener :  null, igralci: []};
-        //teams.push(novaEkipa);
-       
-       // setEkipa([...Ekipa, novaEkipa]);//doda not in se vse updejta
+        //const novaEkipa = {ime: ime , letoUstanovitve: letoUstanovitve, direktor:Bojan ,trener :  Darko, igralci: [Ronaldo]};
+        const novaEkipa: Ekipa = new Ekipa(ime , letoUstanovitve, Darko, Bojan, []);
+
         
+        console.log(novaEkipa);
+        props.setEkipe([...props.ekipe, novaEkipa]);
+        
+        teams.push(novaEkipa); //teams je kao backend 
     };
 
   return (

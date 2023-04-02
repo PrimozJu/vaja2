@@ -16,6 +16,8 @@ interface Props {}
 const Home: React.FC<Props> = () => {
   const { ime } = useParams(); //iz urlja vzame ime ekipe
 
+  console.log("trenutno si na " + ime);
+
   const izbrana_ekipa = teams.find((ekipa) => ekipa.ime === ime);
 
   if (!izbrana_ekipa) {

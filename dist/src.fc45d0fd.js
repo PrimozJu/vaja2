@@ -36502,7 +36502,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.teams = void 0;
+exports.teams = exports.VanDijk = exports.Saso = exports.Salah = exports.Ronaldo = exports.Pique = exports.Olimpija = exports.Neymar = exports.Modric = exports.Messi = exports.Mbappe = exports.Maribor = exports.Kante = exports.Kane = exports.DeBruyne = exports.Darko = exports.Celje = exports.Bojan = void 0;
 var _Ekipa = _interopRequireDefault(require("./Ekipa"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Bojan = {
@@ -36513,6 +36513,7 @@ var Bojan = {
   veljavnost: 2024,
   id: 1
 };
+exports.Bojan = Bojan;
 var Darko = {
   ime: "Jovo",
   priimek: "MajkoMilo",
@@ -36521,6 +36522,7 @@ var Darko = {
   veljavnost: 2028,
   id: 2
 };
+exports.Darko = Darko;
 var Ronaldo = {
   ime: "Kristjano",
   priimek: "Ronaldich",
@@ -36530,6 +36532,7 @@ var Ronaldo = {
   poskodovan: false,
   id: 3
 };
+exports.Ronaldo = Ronaldo;
 var Messi = {
   ime: "Lijonel",
   priimek: "Messich",
@@ -36539,6 +36542,7 @@ var Messi = {
   poskodovan: true,
   id: 4
 };
+exports.Messi = Messi;
 var Neymar = {
   ime: "Nejmar",
   priimek: "Neymarich",
@@ -36548,6 +36552,7 @@ var Neymar = {
   poskodovan: false,
   id: 5
 };
+exports.Neymar = Neymar;
 var Pique = {
   ime: "Pike",
   priimek: "Shejkira",
@@ -36557,7 +36562,9 @@ var Pique = {
   poskodovan: false,
   id: 6
 };
+exports.Pique = Pique;
 var Maribor = new _Ekipa.default("Nk Maribor", 1960, Darko, Bojan, []);
+exports.Maribor = Maribor;
 Maribor.dodajIgralca(Ronaldo);
 Maribor.dodajIgralca(Messi);
 Maribor.dodajIgralca(Neymar);
@@ -36586,6 +36593,7 @@ var Salah = {
   poskodovan: false,
   id: 10
 };
+exports.Salah = Salah;
 var Mbappe = {
   ime: "Kylian",
   priimek: "Mbappe",
@@ -36595,6 +36603,7 @@ var Mbappe = {
   poskodovan: false,
   id: 11
 };
+exports.Mbappe = Mbappe;
 var DeBruyne = {
   ime: "Kevin",
   priimek: "De Bruyne",
@@ -36604,6 +36613,7 @@ var DeBruyne = {
   poskodovan: true,
   id: 12
 };
+exports.DeBruyne = DeBruyne;
 var VanDijk = {
   ime: "Virgil",
   priimek: "Van Dijk",
@@ -36613,6 +36623,7 @@ var VanDijk = {
   poskodovan: true,
   id: 13
 };
+exports.VanDijk = VanDijk;
 var Modric = {
   ime: "Luka",
   priimek: "Modric",
@@ -36622,6 +36633,7 @@ var Modric = {
   poskodovan: false,
   id: 14
 };
+exports.Modric = Modric;
 var Kane = {
   ime: "Harry",
   priimek: "Kane",
@@ -36631,6 +36643,7 @@ var Kane = {
   poskodovan: true,
   id: 15
 };
+exports.Kane = Kane;
 var Kante = {
   ime: "N'Golo",
   priimek: "Kante",
@@ -36640,6 +36653,7 @@ var Kante = {
   poskodovan: false,
   id: 16
 };
+exports.Kante = Kante;
 var Saso = {
   ime: "Saso",
   priimek: "Bitkojn",
@@ -36649,7 +36663,9 @@ var Saso = {
   poskodovan: true,
   id: 17
 };
+exports.Saso = Saso;
 var Olimpija = new _Ekipa.default("Nk Olimpija", 1960, MarkoTreener, BojanDirektor, []);
+exports.Olimpija = Olimpija;
 Olimpija.dodajIgralca(Ronaldo);
 Olimpija.dodajIgralca(Messi);
 Olimpija.dodajIgralca(Neymar);
@@ -36662,6 +36678,7 @@ Olimpija.dodajIgralca(Salah);
 Olimpija.dodajIgralca(Pique);
 Olimpija.dodajIgralca(Saso);
 var Celje = new _Ekipa.default("Nk celje", 1955, null, null, []);
+exports.Celje = Celje;
 var teams = [Maribor, Olimpija, Celje];
 exports.teams = teams;
 },{"./Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"node_modules/classnames/index.js":[function(require,module,exports) {
@@ -52602,6 +52619,7 @@ var DodajIgralca = function (_a) {
       poskodovan: false,
       id: 18 + 1
     }], false));
+    console.log(igralci);
   };
   return (0, _jsxRuntime.jsx)("div", __assign({
     className: "row border border-warning rounded "
@@ -52988,6 +53006,7 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var Home = function () {
   var ime = (0, _reactRouterDom.useParams)().ime; //iz urlja vzame ime ekipe
+  console.log("trenutno si na " + ime);
   var izbrana_ekipa = _Index.teams.find(function (ekipa) {
     return ekipa.ime === ime;
   });
@@ -53010,7 +53029,7 @@ var Home = function () {
 };
 var _default = Home;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../Menu/Menu":"src/Components/Menu/Menu.tsx","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../Telo/Telo":"src/Components/Telo/Telo.tsx","../Igralec/Igralec":"src/Components/Igralec/Igralec.tsx","../Opozorilo/Opozorilo":"src/Components/Opozorilo/Opozorilo.tsx","../Info/Info":"src/Components/Info/Info.tsx","../Noga/Noga":"src/Components/Noga/Noga.tsx","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/Components/SeznamEkip/SeznamEkip.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../Menu/Menu":"src/Components/Menu/Menu.tsx","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../Telo/Telo":"src/Components/Telo/Telo.tsx","../Igralec/Igralec":"src/Components/Igralec/Igralec.tsx","../Opozorilo/Opozorilo":"src/Components/Opozorilo/Opozorilo.tsx","../Info/Info":"src/Components/Info/Info.tsx","../Noga/Noga":"src/Components/Noga/Noga.tsx","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"src/Components/NovaEkipa/NovaEkipa.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53019,10 +53038,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireWildcard(require("react"));
+var _reactBootstrap = require("react-bootstrap");
 var _Index = require("../BackendBaje/Index");
-var _reactRouterDom = require("react-router-dom");
-var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
-var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+var _Ekipa = _interopRequireDefault(require("../BackendBaje/Ekipa"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -53036,73 +53054,30 @@ var __assign = void 0 && (void 0).__assign || function () {
   };
   return __assign.apply(this, arguments);
 };
-var SeznamEkip = function () {
-  var _a = (0, _react.useState)(_Index.teams),
-    ekipe = _a[0],
-    setEkipe = _a[1];
-  return (0, _jsxRuntime.jsx)("div", {
-    children: (0, _jsxRuntime.jsx)(_CardGroup.default, {
-      children: ekipe.map(function (ekipa) {
-        return (0, _jsxRuntime.jsx)(_Card.default, {
-          children: (0, _jsxRuntime.jsxs)(_Card.default.Body, {
-            children: [(0, _jsxRuntime.jsx)(_Card.default.Title, {
-              children: ekipa.ime
-            }), (0, _jsxRuntime.jsxs)(_Card.default.Text, {
-              children: ["since ", ekipa.letoUstanovitve]
-            }), (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
-              to: "/".concat(ekipa.ime),
-              className: "btn btn-primary"
-            }, {
-              children: "Ve\u010D"
-            }))]
-          })
-        }, ekipa.ime);
-      })
-    })
-  });
-};
-var _default = SeznamEkip;
-exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","react-router-dom":"node_modules/react-router-dom/dist/index.js","react-bootstrap/Card":"node_modules/react-bootstrap/esm/Card.js","react-bootstrap/CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js"}],"src/Components/NovaEkipa/NovaEkipa.tsx":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = _interopRequireWildcard(require("react"));
-var _reactBootstrap = require("react-bootstrap");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var __assign = void 0 && (void 0).__assign || function () {
-  __assign = Object.assign || function (t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+var __spreadArray = void 0 && (void 0).__spreadArray || function (to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+    if (ar || !(i in from)) {
+      if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+      ar[i] = from[i];
     }
-    return t;
-  };
-  return __assign.apply(this, arguments);
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
 };
-var NovaEkipa = function () {
+var NovaEkipa = function (props) {
+  console.log(props.ekipe);
   var _a = (0, _react.useState)(""),
     ime = _a[0],
     setIme = _a[1];
-  var _b = (0, _react.useState)(),
+  var _b = (0, _react.useState)(0),
     letoUstanovitve = _b[0],
     setLetoUstanovitve = _b[1];
   var handleFormSubmit = function (event) {
     event.preventDefault();
-    var novaEkipa = {
-      ime: ime,
-      letoUstanovitve: letoUstanovitve,
-      direktor: null,
-      trener: null,
-      igralci: []
-    };
-    //teams.push(novaEkipa);
-    // setEkipa([...Ekipa, novaEkipa]);//doda not in se vse updejta
+    //const novaEkipa = {ime: ime , letoUstanovitve: letoUstanovitve, direktor:Bojan ,trener :  Darko, igralci: [Ronaldo]};
+    var novaEkipa = new _Ekipa.default(ime, letoUstanovitve, _Index.Darko, _Index.Bojan, []);
+    console.log(novaEkipa);
+    props.setEkipe(__spreadArray(__spreadArray([], props.ekipe, true), [novaEkipa], false));
+    _Index.teams.push(novaEkipa); //teams je kao backend 
   };
 
   return (0, _jsxRuntime.jsx)("div", __assign({
@@ -53174,7 +53149,64 @@ var NovaEkipa = function () {
 };
 var _default = NovaEkipa;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js"}],"src/Components/Routing/Routing.tsx":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-bootstrap":"node_modules/react-bootstrap/esm/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","../BackendBaje/Ekipa":"src/Components/BackendBaje/Ekipa.ts"}],"src/Components/SeznamEkip/SeznamEkip.tsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = _interopRequireWildcard(require("react"));
+var _Index = require("../BackendBaje/Index");
+var _reactRouterDom = require("react-router-dom");
+var _Card = _interopRequireDefault(require("react-bootstrap/Card"));
+var _CardGroup = _interopRequireDefault(require("react-bootstrap/CardGroup"));
+var _NovaEkipa = _interopRequireDefault(require("../NovaEkipa/NovaEkipa"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var __assign = void 0 && (void 0).__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+var SeznamEkip = function () {
+  var _a = (0, _react.useState)(_Index.teams),
+    ekipe = _a[0],
+    setEkipe = _a[1];
+  return (0, _jsxRuntime.jsxs)("div", {
+    children: [(0, _jsxRuntime.jsx)(_CardGroup.default, {
+      children: ekipe.map(function (ekipa) {
+        return (0, _jsxRuntime.jsx)(_Card.default, {
+          children: (0, _jsxRuntime.jsxs)(_Card.default.Body, {
+            children: [(0, _jsxRuntime.jsx)(_Card.default.Title, {
+              children: ekipa.ime
+            }), (0, _jsxRuntime.jsxs)(_Card.default.Text, {
+              children: ["since ", ekipa.letoUstanovitve]
+            }), (0, _jsxRuntime.jsx)(_reactRouterDom.Link, __assign({
+              to: "/".concat(ekipa.ime),
+              className: "btn btn-primary"
+            }, {
+              children: "Ve\u010D"
+            }))]
+          })
+        }, ekipa.ime);
+      })
+    }), (0, _jsxRuntime.jsx)(_NovaEkipa.default, {
+      ekipe: ekipe,
+      setEkipe: setEkipe
+    })]
+  });
+};
+var _default = SeznamEkip;
+exports.default = _default;
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","../BackendBaje/Index":"src/Components/BackendBaje/Index.ts","react-router-dom":"node_modules/react-router-dom/dist/index.js","react-bootstrap/Card":"node_modules/react-bootstrap/esm/Card.js","react-bootstrap/CardGroup":"node_modules/react-bootstrap/esm/CardGroup.js","../NovaEkipa/NovaEkipa":"src/Components/NovaEkipa/NovaEkipa.tsx"}],"src/Components/Routing/Routing.tsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -53231,7 +53263,6 @@ exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
-var _SeznamEkip = _interopRequireDefault(require("../SeznamEkip/SeznamEkip"));
 require("./NavBar.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var __assign = void 0 && (void 0).__assign || function () {
@@ -53245,9 +53276,11 @@ var __assign = void 0 && (void 0).__assign || function () {
   return __assign.apply(this, arguments);
 };
 // import custom CSS file for styling
-function NavBar() {
-  return (0, _jsxRuntime.jsxs)("div", {
-    children: [(0, _jsxRuntime.jsx)("nav", __assign({
+function NavBar(_a) {
+  var ekipe = _a.ekipe,
+    setEkipe = _a.setEkipe;
+  return (0, _jsxRuntime.jsx)("div", {
+    children: (0, _jsxRuntime.jsx)("nav", __assign({
       className: "navbar navbar-expand-lg navbar-dark bg-black"
     }, {
       children: (0, _jsxRuntime.jsxs)("div", __assign({
@@ -53300,12 +53333,12 @@ function NavBar() {
           }))
         }))]
       }))
-    })), (0, _jsxRuntime.jsx)(_SeznamEkip.default, {})]
+    }))
   });
 }
 var _default = NavBar;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","../SeznamEkip/SeznamEkip":"src/Components/SeznamEkip/SeznamEkip.tsx","./NavBar.css":"src/Components/Navbar/NavBar.css"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/dist/index.js","./NavBar.css":"src/Components/Navbar/NavBar.css"}],"node_modules/bootstrap/dist/css/bootstrap.css":[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
@@ -53319,13 +53352,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 require("./App.css");
 var _Routing = _interopRequireDefault(require("./Components/Routing/Routing"));
 var _Navbar = _interopRequireDefault(require("./Components/Navbar/Navbar"));
 require("bootstrap/dist/css/bootstrap.css");
 var _reactRouterDom = require("react-router-dom");
+var _Index = require("./Components/BackendBaje/Index");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var __assign = void 0 && (void 0).__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -53337,20 +53373,23 @@ var __assign = void 0 && (void 0).__assign || function () {
   return __assign.apply(this, arguments);
 };
 function App() {
+  var _a = (0, _react.useState)(_Index.teams),
+    ekipe = _a[0],
+    setEkipe = _a[1];
   return (0, _jsxRuntime.jsx)("div", __assign({
     className: "App"
   }, {
     children: (0, _jsxRuntime.jsxs)(_reactRouterDom.BrowserRouter, {
-      children: [(0, _jsxRuntime.jsx)(_Navbar.default, {}), (0, _jsxRuntime.jsx)(_Routing.default, {})]
+      children: [(0, _jsxRuntime.jsx)(_Navbar.default, {
+        ekipe: ekipe,
+        setEkipe: setEkipe
+      }), (0, _jsxRuntime.jsx)(_Routing.default, {})]
     })
   }));
 }
-{/* <RouterProvider router={Routing} />
- */
-}
 var _default = App;
 exports.default = _default;
-},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","./App.css":"src/App.css","./Components/Routing/Routing":"src/Components/Routing/Routing.tsx","./Components/Navbar/Navbar":"src/Components/Navbar/Navbar.tsx","bootstrap/dist/css/bootstrap.css":"node_modules/bootstrap/dist/css/bootstrap.css","react-router-dom":"node_modules/react-router-dom/dist/index.js"}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
+},{"react/jsx-runtime":"node_modules/react/jsx-runtime.js","react":"node_modules/react/index.js","./App.css":"src/App.css","./Components/Routing/Routing":"src/Components/Routing/Routing.tsx","./Components/Navbar/Navbar":"src/Components/Navbar/Navbar.tsx","bootstrap/dist/css/bootstrap.css":"node_modules/bootstrap/dist/css/bootstrap.css","react-router-dom":"node_modules/react-router-dom/dist/index.js","./Components/BackendBaje/Index":"src/Components/BackendBaje/Index.ts"}],"node_modules/parcel-bundler/src/builtins/bundle-loader.js":[function(require,module,exports) {
 var getBundleURL = require('./bundle-url').getBundleURL;
 function loadBundlesLazy(bundles) {
   if (!Array.isArray(bundles)) {
@@ -53484,7 +53523,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53910" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51933" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,7 +1,7 @@
 import {Igralec, Funkcionar} from './Oseba';
 import Ekipa from './Ekipa';
 
-const Bojan: Funkcionar = {
+ const Bojan: Funkcionar = {
     ime: "Buraz",
     priimek: "Buraski",
     letoRojstva: 1999,
@@ -10,7 +10,7 @@ const Bojan: Funkcionar = {
     id: 1
 };
 
-const Darko: Funkcionar = {
+ const Darko: Funkcionar = {
     ime: "Jovo",
     priimek: "MajkoMilo",
     letoRojstva: 2004,
@@ -193,4 +193,4 @@ null as any,
 
 const teams = [Maribor, Olimpija, Celje];
 
-export {teams}
+export {teams, Maribor, Olimpija, Celje, Ronaldo, Messi, Neymar, Pique, Kane, Kante, VanDijk, DeBruyne, Mbappe, Salah, Modric, Saso, Bojan, Darko};
