@@ -61,10 +61,6 @@ const NovaEkipa = (props: Props) => {
                     </div>
                 </div>
 
-               
-
-                
-
                 <Button variant="primary" type="submit">
                     Ustvari ekipo
                 </Button>

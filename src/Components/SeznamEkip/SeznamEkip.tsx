@@ -10,16 +10,12 @@ import Ekipa from '../BackendBaje/Ekipa';
 interface Props {
   ekipe: Ekipa[];
   setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>;
-
 }
 
 const SeznamEkip = (props: Props) => {
+
   const [ekipe, setEkipe] = useState(teams);
 
-  /* const dodajEkipo = (ekipa: Ekipa) => {
-    setEkipe([...ekipe, ekipa]);
-  }; */
-  
   return (
     <div>
       <CardGroup>

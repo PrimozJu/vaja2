@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import Ekipa from '../BackendBaje/Ekipa';
 import { teams } from "../BackendBaje/Index";
@@ -12,10 +12,7 @@ interface Props {
 
 const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
 
-    //console.log(igralci);
-    //const [igralci, setIgralci] = useState();
-
-
+    //to je za vnos polij
     const [ime, setIme] = useState<string>("");
     const [priimek, setPriimek] = useState<string>("");
     const [letoRojstva, setLetoRojstva] = useState<number>(0);
@@ -37,12 +34,12 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
 
     };
 
-    const sprazni_polja = () => {
+    const sprazni_polja = () => { //zakaj se to sprazni
         setIme("");
         setPriimek("");
         setLetoRojstva(0);
         setId(0);
-        setVisina(0);  
+        setVisina(0);
         setTeza(0);
         setPoskodovan(false);
         setId(0);
@@ -52,16 +49,11 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
         console.log(igralci);
     }
 
-   
-                
-        const Simuliraj = () => {
-            setIgralci([...igralci, { ime: "Baje", priimek: "Bajec", letoRojstva: 1999, visina: 190, teza: 90, poskodovan: false, id: 18+1 }]);
-            console.log(igralci);
-            
-          }
-          
-                
-    
+    const Simuliraj = () => {
+        setIgralci([...igralci, { ime: "Baje", priimek: "Bajec", letoRojstva: 1999, visina: 190, teza: 90, poskodovan: false, id: 18 + 1 }]);
+        console.log(igralci);
+
+    }
 
     return (
         <div className="row border border-warning rounded ">
@@ -76,7 +68,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                             <Form.Control type="text" placeholder="Vnesi ime" value={ime} onChange={(event) => setIme(event.target.value)} />
                         </div>
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>Priimek</Form.Label>
@@ -85,7 +76,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                             <Form.Control type="text" placeholder="Vnesi priimek" value={priimek} onChange={(event) => setPriimek(event.target.value)} />
                         </div>
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>Leto rojstva</Form.Label>
@@ -94,7 +84,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                             <Form.Control type="number" placeholder="Vnesi leto rojstva" value={letoRojstva} onChange={(event) => setLetoRojstva(Number(event.target.value))} />
                         </div>
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>Visina</Form.Label>
@@ -103,7 +92,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                             <Form.Control type="number" placeholder="Vnesi visino v cm" value={visina} onChange={(event) => setVisina(Number(event.target.value))} />
                         </div>
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>Teža</Form.Label>
@@ -112,7 +100,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                             <Form.Control type="number" step="0.1" placeholder="Vnesi težo v kg" value={teza} onChange={(event) => setTeza(Number(event.target.value))} />
                         </div>
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>Poškodovan</Form.Label>
@@ -128,7 +115,6 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                         </div>
 
                     </div>
-
                     <div className="row mb-3">
                         <div className="col-md-2">
                             <Form.Label>ID</Form.Label>
@@ -139,7 +125,7 @@ const DodajIgralca: React.FC<Props> = ({ kera_ekipa, igralci, setIgralci }) => {
                     </div>
 
                     <Button variant="primary" type="submit">
-                        Dodaj igralca
+                        Dodaj igralca 
                     </Button>
                     <button className="btn btn-primary" onClick={() => preglejState()}>Prikaži igralce</button>
                     <button className="btn btn-primary" onClick={() => Simuliraj()}  >Simuliraj igralca</button>

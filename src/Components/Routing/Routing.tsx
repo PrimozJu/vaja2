@@ -19,7 +19,4 @@ const Routing = (props: Props) => {
         </Routes>
     )
 }
-
-
-
 export default Routing;
