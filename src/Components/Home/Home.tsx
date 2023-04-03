@@ -24,7 +24,7 @@ const Home: React.FC<Props> = () => {
     return <div>Error: ekipa not found</div>;
   }
 
-  return (
+  return (  
     <div>
       <Menu ime={izbrana_ekipa.ime} />
       <Telo kera_ekipa={izbrana_ekipa} />

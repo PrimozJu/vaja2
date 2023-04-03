@@ -6,8 +6,6 @@ interface Props {
 }
 
 const Noga: React.FC<Props> = () => {
-
-
     return (
         
         <div>

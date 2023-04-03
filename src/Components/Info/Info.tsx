@@ -5,12 +5,12 @@ interface Props {
 }
 
 const Info: React.FC<Props> = () => {
- 
+
 
     return (
-                <h3 color='red'>Ekipa ima 11 igralcev ali morda celo več </h3>
-            );
-    
+        <h3 color='red'>Ekipa ima 11 igralcev ali morda celo več </h3>
+    );
+
 };
 
 export default Info;

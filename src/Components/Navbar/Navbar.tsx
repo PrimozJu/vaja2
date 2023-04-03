@@ -6,11 +6,6 @@ import SeznamEkip from '../SeznamEkip/SeznamEkip';
 import './NavBar.css'; // import custom CSS file for styling
 
 
-/* interface props{ 
-    teams: Ekipa;
-    ekipe: Ekipa[] ;
-    setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>; 
-} */
 type NavBarProps = {    // ali pa tole za props
   ekipe: Ekipa[],
   setEkipe: React.Dispatch<React.SetStateAction<Ekipa[]>>,
